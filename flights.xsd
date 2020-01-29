@@ -1,0 +1,46 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="flights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="airport" />
+        <xs:element name="updatedDate" type="xs:date" minOccurs="0" maxOccurs="1" />
+        <xs:element name="updatedTime" type="xs:time" minOccurs="0" maxOccurs="1" />
+        <xs:element name="arrivals" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="flight" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="airline" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="flightFrom" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="schedTime" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="actTime" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="status" minOccurs="1" maxOccurs="1" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="departures" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="flight">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="airline" />
+                    <xs:element name="flightTo" />
+                    <xs:element name="schedTime" />
+                    <xs:element name="actTime" />
+                    <xs:element name="status" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
