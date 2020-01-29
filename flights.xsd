@@ -2,7 +2,7 @@
   <xs:element name="flights">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="airport" />
+        <xs:element name="airport" type="xs:string" fixed="XYU" />
         <xs:element name="updatedDate" type="xs:date" minOccurs="0" maxOccurs="1" />
         <xs:element name="updatedTime" type="xs:time" minOccurs="0" maxOccurs="1" />
         <xs:element name="arrivals" minOccurs="0" maxOccurs="1">
@@ -11,11 +11,11 @@
               <xs:element name="flight" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="airline" minOccurs="1" maxOccurs="1" />
-                    <xs:element name="flightFrom" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="airline" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="flightFrom" type="xs:string" minOccurs="1" maxOccurs="1" />
                     <xs:element name="schedTime" type="xs:time" minOccurs="1" maxOccurs="1" />
                     <xs:element name="actTime" type="xs:time" minOccurs="1" maxOccurs="1" />
-                    <xs:element name="status" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="status" type="xs:string" minOccurs="1" maxOccurs="1" />
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
@@ -28,11 +28,11 @@
               <xs:element name="flight">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="airline" minOccurs="1" maxOccurs="1" />
-                    <xs:element name="flightTo" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="airline" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="flightTo" type="xs:string" minOccurs="1" maxOccurs="1" />
                     <xs:element name="schedTime" type="xs:time" minOccurs="1" maxOccurs="1" />
                     <xs:element name="actTime" type="xs:time" minOccurs="1" maxOccurs="1" />
-                    <xs:element name="status" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="status" type="xs:string" minOccurs="1" maxOccurs="1" />
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
