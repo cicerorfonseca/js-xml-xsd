@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <flights xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="flights.xsd">
-  <airport ID="1">London International Airport</airport>
+  <airport>London International Airport</airport>
   <updatedDate>2020-01-15</updatedDate>
   <updatedTime>15:27:00</updatedTime>
   <arrivals>
     <flight id="8659">
       <airline>Air Canada</airline>
       <flightFrom>Ottawa</flightFrom>
-      <schedTime>13:50</schedTime>
-      <actTime>13:50</actTime>
+      <schedTime>13:50:09</schedTime>
+      <actTime>13:50:09</actTime>
       <status>Arrived</status>
     </flight>
     <flight id="8649">
       <airline>Air Canada</airline>
       <flightFrom>Toronto</flightFrom>
-      <schedTime>14:30</schedTime>
-      <actTime>14:30</actTime>
+      <schedTime>14:30:09</schedTime>
+      <actTime>14:30:09</actTime>
       <status>Arrived</status>
     </flight>
     <flight id="735">
       <airline>Swoop</airline>
       <flightFrom>Orlando</flightFrom>
-      <schedTime>14:11</schedTime>
-      <actTime>14:11</actTime>
+      <schedTime>14:11:09</schedTime>
+      <actTime>14:11:09</actTime>
       <status>Arrived</status>
     </flight>
     <flight id="879">
       <airline>Air Transat</airline>
       <flightFrom>Punta Cana</flightFrom>
-      <schedTime>16:15</schedTime>
-      <actTime>16:15</actTime>
+      <schedTime>16:15:09</schedTime>
+      <actTime>16:15:09</actTime>
       <status>On Time</status>
     </flight>
     <flight id="736">
       <airline>Westjet</airline>
       <flightFrom>Calgary</flightFrom>
-      <schedTime>22:16</schedTime>
-      <actTime>22:16</actTime>
+      <schedTime>22:16:09</schedTime>
+      <actTime>22:16:09</actTime>
       <status>On Time</status>
     </flight>
   </arrivals>
@@ -44,36 +44,36 @@
     <flight id="8660">
       <airline>Air Canada</airline>
       <flightTo>Ottawa</flightTo>
-      <schedTime>14:15</schedTime>
-      <actTime>14:15</actTime>
+      <schedTime>14:15:09</schedTime>
+      <actTime>14:15:09</actTime>
       <status>Departed</status>
     </flight>
     <flight id="836">
       <airline>Swoop</airline>
       <flightTo>Orlando</flightTo>
-      <schedTime>16:00</schedTime>
-      <actTime>16:00</actTime>
+      <schedTime>16:00:09</schedTime>
+      <actTime>16:00:09</actTime>
       <status>Delayed</status>
     </flight>
     <flight id="846">
       <airline>Air Transat</airline>
       <flightTo>Cancun</flightTo>
-      <schedTime>22:10</schedTime>
-      <actTime>22:10</actTime>
+      <schedTime>22:10:09</schedTime>
+      <actTime>22:10:09</actTime>
       <status>On Time</status>
     </flight>
     <flight id="8660">
       <airline>Air Canada</airline>
       <flightTo>Ottawa</flightTo>
-      <schedTime>14:15</schedTime>
-      <actTime>14:15</actTime>
+      <schedTime>14:15:09</schedTime>
+      <actTime>14:15:09</actTime>
       <status>Departed</status>
     </flight>
     <flight id="374">
       <airline>Sunwing</airline>
       <flightTo>Varadero</flightTo>
-      <schedTime>22:15</schedTime>
-      <actTime>22:15</actTime>
+      <schedTime>22:15:09</schedTime>
+      <actTime>22:15:09</actTime>
       <status>On Time</status>
     </flight>
   </departures>
