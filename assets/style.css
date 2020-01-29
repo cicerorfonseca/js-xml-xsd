@@ -1,0 +1,12 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.jumbotron {
+  margin-bottom: 1%;
+  padding: 2%;
+}
+
+#bottomLogo {
+  padding-left: 2%;
+}
