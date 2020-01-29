@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <flights xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="flights.xsd">
-  <airport>London International Airport</airport>
+  <airport>XYU</airport>
   <updatedDate>2020-01-15</updatedDate>
   <updatedTime>15:27:00</updatedTime>
   <arrivals>
