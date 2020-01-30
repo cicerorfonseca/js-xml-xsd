@@ -78,10 +78,10 @@
         </xs:element>
 
         <!-- DEPARTURES -->
-        <xs:element name="departures" minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="departures" minOccurs="0" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="departure">
+              <xs:element name="departure" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="flight">
