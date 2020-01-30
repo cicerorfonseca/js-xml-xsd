@@ -14,7 +14,10 @@ function loadXMLDoc() {
 
   xmlHttp.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
+      //Read the XML request and populate the flights array
       displayFlights(this);
+
+      //Populate the html table according to the flights array data
       populateTable();
     }
   }
@@ -25,8 +28,6 @@ function loadXMLDoc() {
 
 function displayFlights(xml) {
   var xmlDom = xml.responseXML;
-
-  console.log(xmlDom);
 
   //Date and Time
   const updatedDate = xmlDom.getElementsByTagName('updatedDate');
@@ -45,7 +46,6 @@ function displayFlights(xml) {
     }
   }
 
-
   //Departures
   const departures = xmlDom.getElementsByTagName('departure');
 
@@ -56,18 +56,16 @@ function displayFlights(xml) {
       flights[flights.length - 1].push(departuresList[j].firstChild.nodeValue);
     }
   }
-
-  console.log(flights)
 };
 
 function populateTable() {
+  //Get table element by tag name so the header is not changed when the table is displayed
   let arrivalsTable = document.getElementById('arrivalsTable').getElementsByTagName('tbody')[0];
-
   let departuresTable = document.getElementById('departuresTable').getElementsByTagName('tbody')[0];
 
-  //populate arrivals table
+  //Populate arrivals table
   for (let i = 0; i < flights.length; i++) {
-    //get the table rows length to use as index so the insertrow will add to the end of table
+    //Get the table rows length to use as index so the insertrow will add to the end of table
     let tableIndex = arrivalsTable.rows.length;
 
     //'arr' = <arrivals>
@@ -81,7 +79,7 @@ function populateTable() {
     }
   }
 
-  //populate departures table
+  //Populate departures table
   for (let j = 0; j < flights.length; j++) {
     //get the table rows length to use as index so the insertrow will add to the end of table
     let tableIndex = departuresTable.rows.length;
