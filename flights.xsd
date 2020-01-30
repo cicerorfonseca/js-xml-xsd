@@ -5,34 +5,71 @@
         <xs:element name="airport" type="xs:string" fixed="XYU" />
         <xs:element name="updatedDate" type="xs:date" minOccurs="0" maxOccurs="1" />
         <xs:element name="updatedTime" type="xs:time" minOccurs="0" maxOccurs="1" />
+
+        <!-- ARRIVALS -->
         <xs:element name="arrivals" minOccurs="0" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="flight" minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="arrival" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="airline" type="xs:string" minOccurs="1" maxOccurs="1" />
-                    <xs:element name="flightFrom" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="flight" minOccurs="1" maxOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                          <xs:minInclusive value="1" />
+                          <xs:maxInclusive value="9999" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="airline" minOccurs="1" maxOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Air Canada" />
+                          <xs:enumeration value="Air Transat" />
+                          <xs:enumeration value="Sunwing" />
+                          <xs:enumeration value="Swoop" />
+                          <xs:enumeration value="WestJet" />
+                          <xs:enumeration value="WestJet Encore" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="flightFrom" minOccurs="1" maxOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Abbostsford" />
+                          <xs:enumeration value="Calgary" />
+                          <xs:enumeration value="Cancun" />
+                          <xs:enumeration value="Cayo Santa Maria" />
+                          <xs:enumeration value="Edmonton" />
+                          <xs:enumeration value="Hamilton" />
+                          <xs:enumeration value="Las Vegas" />
+                          <xs:enumeration value="Montego Bay" />
+                          <xs:enumeration value="Montreal" />
+                          <xs:enumeration value="Orlando" />
+                          <xs:enumeration value="Ottawa" />
+                          <xs:enumeration value="Puerto Plata" />
+                          <xs:enumeration value="Punta Cana" />
+                          <xs:enumeration value="Sault Ste Marie" />
+                          <xs:enumeration value="Toronto" />
+                          <xs:enumeration value="Varadero" />
+                          <xs:enumeration value="Winnipeg" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
                     <xs:element name="schedTime" type="xs:time" minOccurs="1" maxOccurs="1" />
                     <xs:element name="actTime" type="xs:time" minOccurs="1" maxOccurs="1" />
-                    <xs:element name="status" type="xs:string" minOccurs="1" maxOccurs="1" />
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="departures" minOccurs="0" maxOccurs="unbounded">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="flight">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="airline" type="xs:string" minOccurs="1" maxOccurs="1" />
-                    <xs:element name="flightTo" type="xs:string" minOccurs="1" maxOccurs="1" />
-                    <xs:element name="schedTime" type="xs:time" minOccurs="1" maxOccurs="1" />
-                    <xs:element name="actTime" type="xs:time" minOccurs="1" maxOccurs="1" />
-                    <xs:element name="status" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="status" minOccurs="1" maxOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Arrived" />
+                          <xs:enumeration value="Cancelled" />
+                          <xs:enumeration value="Diverted" />
+                          <xs:enumeration value="Early" />
+                          <xs:enumeration value="Late" />
+                          <xs:enumeration value="On Time" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
@@ -40,6 +77,74 @@
           </xs:complexType>
         </xs:element>
 
+        <!-- DEPARTURES -->
+        <xs:element name="departures" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="departure">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="flight">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                          <xs:minInclusive value="1" />
+                          <xs:maxInclusive value="9999" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="airline" minOccurs="1" maxOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Air Canada" />
+                          <xs:enumeration value="Air Transat" />
+                          <xs:enumeration value="Sunwing" />
+                          <xs:enumeration value="Swoop" />
+                          <xs:enumeration value="WestJet" />
+                          <xs:enumeration value="WestJet Encore" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="flightTo" minOccurs="1" maxOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Abbostsford" />
+                          <xs:enumeration value="Calgary" />
+                          <xs:enumeration value="Cancun" />
+                          <xs:enumeration value="Cayo Santa Maria" />
+                          <xs:enumeration value="Edmonton" />
+                          <xs:enumeration value="Hamilton" />
+                          <xs:enumeration value="Las Vegas" />
+                          <xs:enumeration value="Montego Bay" />
+                          <xs:enumeration value="Montreal" />
+                          <xs:enumeration value="Orlando" />
+                          <xs:enumeration value="Ottawa" />
+                          <xs:enumeration value="Puerto Plata" />
+                          <xs:enumeration value="Punta Cana" />
+                          <xs:enumeration value="Sault Ste Marie" />
+                          <xs:enumeration value="Toronto" />
+                          <xs:enumeration value="Varadero" />
+                          <xs:enumeration value="Winnipeg" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="schedTime" type="xs:time" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="actTime" type="xs:time" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="status" minOccurs="1" maxOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Cancelled" />
+                          <xs:enumeration value="Departed" />
+                          <xs:enumeration value="Delayed" />
+                          <xs:enumeration value="On Time" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
