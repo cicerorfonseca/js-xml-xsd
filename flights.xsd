@@ -36,7 +36,7 @@
                     <xs:element name="flightFrom" minOccurs="1" maxOccurs="1">
                       <xs:simpleType>
                         <xs:restriction base="xs:string">
-                          <xs:enumeration value="Abbostsford" />
+                          <xs:enumeration value="Abbotsford" />
                           <xs:enumeration value="Calgary" />
                           <xs:enumeration value="Cancun" />
                           <xs:enumeration value="Cayo Santa Maria" />
@@ -107,7 +107,7 @@
                     <xs:element name="flightTo" minOccurs="1" maxOccurs="1">
                       <xs:simpleType>
                         <xs:restriction base="xs:string">
-                          <xs:enumeration value="Abbostsford" />
+                          <xs:enumeration value="Abbotsford" />
                           <xs:enumeration value="Calgary" />
                           <xs:enumeration value="Cancun" />
                           <xs:enumeration value="Cayo Santa Maria" />
