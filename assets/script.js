@@ -15,7 +15,7 @@ function loadXMLDoc() {
   xmlHttp.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
       //Read the XML request and populate the flights array
-      displayFlights(this);
+      populateFlights(this);
 
       //Populate the html table according to the flights array data
       populateTable();
@@ -26,7 +26,7 @@ function loadXMLDoc() {
   xmlHttp.send();
 }
 
-function displayFlights(xml) {
+function populateFlights(xml) {
   var xmlDom = xml.responseXML;
 
   //Date and Time
@@ -36,7 +36,7 @@ function displayFlights(xml) {
   document.getElementById('dateTime').innerHTML += `${updatedDate[0].firstChild.nodeValue}, ${updatedTime[0].firstChild.nodeValue}`;
 
   //Arrivals
-  arrivals = xmlDom.getElementsByTagName('arrival');
+  const arrivals = xmlDom.getElementsByTagName('arrival');
 
   for (i = 0; i < arrivals.length; i++) {
     const arrivalsList = arrivals[i].children;
@@ -56,6 +56,8 @@ function displayFlights(xml) {
       flights[flights.length - 1].push(departuresList[j].firstChild.nodeValue);
     }
   }
+
+  console.log(flights);
 };
 
 function populateTable() {
