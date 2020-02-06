@@ -1,4 +1,23 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Definitions of Global Types -->
+  <!-- Airline -->
+  <xs:simpleType name="airLine">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="Air Canada|Air Transat|Sunwing|Swoop|WestJet|WestJet Encore" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Cities -->
+  <xs:simpleType name="cities">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="Abbotsford|Calgary|Cancun|Cayo Santa Maria|Edmonton|
+                        |Hamilton|Las Vegas|Montego Bay|Montreal|Orlando|Ottawa|
+                        |Puerto Plata|Punta Cana|Sault Ste Marie|Toronto|Varadero|Winnipeg"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Definitions of document structure -->
   <xs:element name="flights">
     <xs:complexType>
       <xs:sequence>
@@ -21,41 +40,8 @@
                         </xs:restriction>
                       </xs:simpleType>
                     </xs:element>
-                    <xs:element name="airline" minOccurs="1" maxOccurs="1">
-                      <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                          <xs:enumeration value="Air Canada" />
-                          <xs:enumeration value="Air Transat" />
-                          <xs:enumeration value="Sunwing" />
-                          <xs:enumeration value="Swoop" />
-                          <xs:enumeration value="WestJet" />
-                          <xs:enumeration value="WestJet Encore" />
-                        </xs:restriction>
-                      </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="flightFrom" minOccurs="1" maxOccurs="1">
-                      <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                          <xs:enumeration value="Abbotsford" />
-                          <xs:enumeration value="Calgary" />
-                          <xs:enumeration value="Cancun" />
-                          <xs:enumeration value="Cayo Santa Maria" />
-                          <xs:enumeration value="Edmonton" />
-                          <xs:enumeration value="Hamilton" />
-                          <xs:enumeration value="Las Vegas" />
-                          <xs:enumeration value="Montego Bay" />
-                          <xs:enumeration value="Montreal" />
-                          <xs:enumeration value="Orlando" />
-                          <xs:enumeration value="Ottawa" />
-                          <xs:enumeration value="Puerto Plata" />
-                          <xs:enumeration value="Punta Cana" />
-                          <xs:enumeration value="Sault Ste Marie" />
-                          <xs:enumeration value="Toronto" />
-                          <xs:enumeration value="Varadero" />
-                          <xs:enumeration value="Winnipeg" />
-                        </xs:restriction>
-                      </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="airline" type="airLine" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="flightFrom" type="cities" minOccurs="1" maxOccurs="1" />
                     <xs:element name="schedTime" type="xs:time" minOccurs="1" maxOccurs="1" />
                     <xs:element name="actTime" type="xs:time" minOccurs="1" maxOccurs="1" />
                     <xs:element name="status" minOccurs="1" maxOccurs="1">
@@ -92,41 +78,8 @@
                         </xs:restriction>
                       </xs:simpleType>
                     </xs:element>
-                    <xs:element name="airline" minOccurs="1" maxOccurs="1">
-                      <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                          <xs:enumeration value="Air Canada" />
-                          <xs:enumeration value="Air Transat" />
-                          <xs:enumeration value="Sunwing" />
-                          <xs:enumeration value="Swoop" />
-                          <xs:enumeration value="WestJet" />
-                          <xs:enumeration value="WestJet Encore" />
-                        </xs:restriction>
-                      </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="flightTo" minOccurs="1" maxOccurs="1">
-                      <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                          <xs:enumeration value="Abbotsford" />
-                          <xs:enumeration value="Calgary" />
-                          <xs:enumeration value="Cancun" />
-                          <xs:enumeration value="Cayo Santa Maria" />
-                          <xs:enumeration value="Edmonton" />
-                          <xs:enumeration value="Hamilton" />
-                          <xs:enumeration value="Las Vegas" />
-                          <xs:enumeration value="Montego Bay" />
-                          <xs:enumeration value="Montreal" />
-                          <xs:enumeration value="Orlando" />
-                          <xs:enumeration value="Ottawa" />
-                          <xs:enumeration value="Puerto Plata" />
-                          <xs:enumeration value="Punta Cana" />
-                          <xs:enumeration value="Sault Ste Marie" />
-                          <xs:enumeration value="Toronto" />
-                          <xs:enumeration value="Varadero" />
-                          <xs:enumeration value="Winnipeg" />
-                        </xs:restriction>
-                      </xs:simpleType>
-                    </xs:element>
+                    <xs:element name="airline" type="airLine" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="flightTo" type="cities" minOccurs="1" maxOccurs="1" />
                     <xs:element name="schedTime" type="xs:time" minOccurs="1" maxOccurs="1" />
                     <xs:element name="actTime" type="xs:time" minOccurs="1" maxOccurs="1" />
                     <xs:element name="status" minOccurs="1" maxOccurs="1">
